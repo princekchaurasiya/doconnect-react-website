@@ -14,7 +14,8 @@ function githubPagesBase() {
 
     const repo = process.env.GITHUB_REPOSITORY?.split('/')[1];
 
-    return repo ? `/${repo}/` : '/';
+    // Laravel Vite emits to public/build/ — base must include "build" for chunk URLs.
+    return repo ? `/${repo}/build/` : '/build/';
 }
 
 export default defineConfig({
