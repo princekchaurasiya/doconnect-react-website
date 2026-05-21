@@ -6,6 +6,18 @@ import type { ComponentType } from 'react';
 
 const pages = import.meta.glob('./Pages/**/*.tsx');
 
+/** GitHub Pages is static HTML only — use full page loads instead of Inertia XHR. */
+if (import.meta.env.VITE_GITHUB_PAGES === 'true') {
+  document.addEventListener('inertia:before', (event) => {
+    const visit = (event as CustomEvent<{ visit: { method: string; url: URL } }>).detail.visit;
+    if (visit.method.toLowerCase() !== 'get') {
+      return;
+    }
+    event.preventDefault();
+    window.location.assign(visit.url.pathname + visit.url.search + visit.url.hash);
+  });
+}
+
 createInertiaApp({
   progress: false,
   resolve: async (name) => {

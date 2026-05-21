@@ -56,6 +56,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Static site base path (GitHub Pages project sites)
+    |--------------------------------------------------------------------------
+    |
+    | When set (e.g. /doconnect-react-website), storage URLs and the Vite base
+    | path align with https://user.github.io/repo-name/ hosting.
+    |
+    */
+
+    'static_base' => env('STATIC_BASE_PATH', ''),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
     |
