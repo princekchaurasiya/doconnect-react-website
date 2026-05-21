@@ -8,11 +8,12 @@ This matches the pattern used for [Express Logistics](https://princekchaurasiya.
 
 ## One-time setup on GitHub
 
-1. Open **https://github.com/princekchaurasiya/doconnect-react-website/settings/pages**
-2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”).
-3. Push to `main` or run the **Deploy GitHub Pages** workflow manually under **Actions**.
+1. Push to `main` (or run **Deploy GitHub Pages** under **Actions**). The workflow creates/updates the `gh-pages` branch.
+2. Open **https://github.com/princekchaurasiya/doconnect-react-website/settings/pages**
+3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+4. Choose branch **`gh-pages`**, folder **`/ (root)`**, then **Save**.
 
-The first deploy may take a few minutes. When it finishes, the workflow shows the live URL.
+The site URL appears at the top of that settings page after a minute or two.
 
 ## What works on the public demo
 
