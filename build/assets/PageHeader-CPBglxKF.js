@@ -1,0 +1,1 @@
+import{j as r}from"./app-pF38iy4k.js";function i({title:o,subtitle:e,children:a,style:m}){return r.jsxs("header",{style:{marginBottom:"1.5rem",...m},children:[r.jsx("h1",{style:{margin:0,fontSize:"1.75rem",color:"var(--color-primary-dark)"},children:o}),e&&r.jsx("p",{style:{margin:"0.35rem 0 0",color:"var(--color-muted)",maxWidth:"52ch"},children:e}),a]})}export{i as P};
