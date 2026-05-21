@@ -1,5 +1,7 @@
 import { Head, Link } from '@inertiajs/react';
 
+import { appPath } from '@/lib/paths';
+
 import { Card } from '@/Components/ui/Card';
 import { PageHeader } from '@/Components/ui/PageHeader';
 import MainLayout from '@/Layouts/MainLayout';
@@ -21,7 +23,7 @@ export default function Team() {
           availability, please call our desk—we will match you to the right clinician for your case.
         </p>
         <p style={{ marginTop: '1.25rem' }}>
-          <Link href="/contact" style={{ fontWeight: 600 }}>
+          <Link href={appPath('/contact')} style={{ fontWeight: 600 }}>
             Contact us
           </Link>{' '}
           or call the number in the header to speak with our team.

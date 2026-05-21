@@ -1,4 +1,6 @@
 import { Head, Link } from '@inertiajs/react';
+
+import { appPath } from '@/lib/paths';
 import { useMemo } from 'react';
 
 import { Card } from '@/Components/ui/Card';
@@ -58,7 +60,7 @@ export default function Blog({ posts, meta }: Props) {
                 {post.category ?? 'Healthcare'} · <span style={{ fontWeight: 700, color: 'var(--color-primary)' }}>{readMin} min read</span>
               </p>
               <h2 style={{ margin: '0.25rem 0' }}>
-                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                <Link href={appPath(`/blog/${post.slug}`)}>{post.title}</Link>
               </h2>
               {post.excerpt && <p style={{ color: 'var(--color-muted)' }}>{post.excerpt}</p>}
               {(post.tags ?? []).length > 0 ? (

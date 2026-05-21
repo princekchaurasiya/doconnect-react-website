@@ -1,4 +1,6 @@
 import { Head, Link } from '@inertiajs/react';
+
+import { appPath } from '@/lib/paths';
 import {
   Activity,
   Ambulance,
@@ -67,7 +69,7 @@ export default function Services({ services }: Props) {
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <h2 style={{ marginTop: 0, fontSize: '1.15rem' }}>{s.title}</h2>
                     <p style={{ color: 'var(--color-muted)' }}>{s.short_description}</p>
-                    <Link href={`/services/${s.slug}`} style={{ fontWeight: 700 }}>
+                    <Link href={appPath(`/services/${s.slug}`)} style={{ fontWeight: 700 }}>
                       Details
                     </Link>
                   </div>

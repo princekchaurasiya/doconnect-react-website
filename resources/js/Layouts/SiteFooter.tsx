@@ -1,4 +1,6 @@
 import { Link, usePage } from '@inertiajs/react';
+
+import { appPath } from '@/lib/paths';
 import { Clock, Mail, Phone } from 'lucide-react';
 
 import type { Site } from '@/types';
@@ -32,32 +34,32 @@ export function SiteFooter() {
             <strong style={{ fontSize: '1.05rem' }}>Useful links</strong>
             <ul style={{ listStyle: 'none', padding: 0, margin: '0.5rem 0 0', lineHeight: 1.9 }}>
               <li>
-                <Link href="/" style={link}>
+                <Link href={appPath('/')} style={link}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" style={link}>
+                <Link href={appPath('/about')} style={link}>
                   About us
                 </Link>
               </li>
               <li>
-                <Link href="/services" style={link}>
+                <Link href={appPath('/services')} style={link}>
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/testimonials" style={link}>
+                <Link href={appPath('/testimonials')} style={link}>
                   Testimonials
                 </Link>
               </li>
               <li>
-                <Link href="/faqs" style={link}>
+                <Link href={appPath('/faqs')} style={link}>
                   FAQs
                 </Link>
               </li>
               <li>
-                <Link href="/blog" style={link}>
+                <Link href={appPath('/blog')} style={link}>
                   Blogs
                 </Link>
               </li>
@@ -89,7 +91,7 @@ export function SiteFooter() {
                 </li>
               ) : null}
               <li style={{ marginTop: '0.65rem' }}>
-                <Link href="/contact" style={link}>
+                <Link href={appPath('/contact')} style={link}>
                   Request a callback
                 </Link>
               </li>

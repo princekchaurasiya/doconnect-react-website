@@ -1,4 +1,6 @@
 import { Head, Link, usePage } from '@inertiajs/react';
+
+import { appPath } from '@/lib/paths';
 import type { CSSProperties, ReactNode } from 'react';
 import {
   Activity,
@@ -264,7 +266,7 @@ export default function Home({ homepageSections, services, siteHome }: Props) {
                       ) : null}
                       <h3 style={{ marginTop: 0 }}>{s.title}</h3>
                       <p style={{ color: 'var(--color-muted)' }}>{s.short_description}</p>
-                      <Link href={`/services/${s.slug}`} style={{ fontWeight: 700 }}>
+                      <Link href={appPath(`/services/${s.slug}`)} style={{ fontWeight: 700 }}>
                         Read more
                       </Link>
                     </div>
@@ -309,7 +311,7 @@ export default function Home({ homepageSections, services, siteHome }: Props) {
             <Link href="/faqs" style={{ fontWeight: 700, marginRight: '1.25rem' }}>
               Read FAQs
             </Link>
-            <Link href="/contact" style={{ fontWeight: 700 }}>
+            <Link href={appPath('/contact')} style={{ fontWeight: 700 }}>
               Contact us
             </Link>
           </div>

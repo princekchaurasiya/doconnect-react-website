@@ -2,17 +2,18 @@ import { Link, usePage } from '@inertiajs/react';
 import { Menu, Phone, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
+import { appPath, stripAppBase } from '@/lib/paths';
 import type { Site } from '@/types';
 
 const navLinks: { href: string; label: string; match: (url: string) => boolean }[] = [
-  { href: '/', label: 'Home', match: (url) => url === '/' },
-  { href: '/about', label: 'About', match: (url) => url.startsWith('/about') },
-  { href: '/services', label: 'Services', match: (url) => url.startsWith('/services') },
-  { href: '/testimonials', label: 'Testimonials', match: (url) => url.startsWith('/testimonials') },
-  { href: '/team', label: 'Team', match: (url) => url.startsWith('/team') },
-  { href: '/faqs', label: 'FAQs', match: (url) => url.startsWith('/faqs') },
-  { href: '/contact', label: 'Contact', match: (url) => url.startsWith('/contact') },
-  { href: '/blog', label: 'Blogs', match: (url) => url.startsWith('/blog') },
+  { href: appPath('/'), label: 'Home', match: (url) => stripAppBase(url) === '/' },
+  { href: appPath('/about'), label: 'About', match: (url) => stripAppBase(url).startsWith('/about') },
+  { href: appPath('/services'), label: 'Services', match: (url) => stripAppBase(url).startsWith('/services') },
+  { href: appPath('/testimonials'), label: 'Testimonials', match: (url) => stripAppBase(url).startsWith('/testimonials') },
+  { href: appPath('/team'), label: 'Team', match: (url) => stripAppBase(url).startsWith('/team') },
+  { href: appPath('/faqs'), label: 'FAQs', match: (url) => stripAppBase(url).startsWith('/faqs') },
+  { href: appPath('/contact'), label: 'Contact', match: (url) => stripAppBase(url).startsWith('/contact') },
+  { href: appPath('/blog'), label: 'Blogs', match: (url) => stripAppBase(url).startsWith('/blog') },
 ];
 
 export function SiteHeader() {
@@ -39,7 +40,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container site-header-container">
-        <Link href="/" className="site-header-logo">
+        <Link href={appPath('/')} className="site-header-logo">
           {siteName}
         </Link>
 

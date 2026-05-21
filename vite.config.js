@@ -24,6 +24,11 @@ export default defineConfig({
         'import.meta.env.VITE_GITHUB_PAGES': JSON.stringify(
             process.env.GITHUB_PAGES === 'true' ? 'true' : 'false',
         ),
+        'import.meta.env.VITE_APP_BASE_PATH': JSON.stringify(
+            process.env.GITHUB_PAGES === 'true'
+                ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] ?? ''}`
+                : '',
+        ),
     },
     plugins: [
         laravel({

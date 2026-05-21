@@ -4,6 +4,8 @@ import { createInertiaApp } from '@inertiajs/react';
 import { createRoot } from 'react-dom/client';
 import type { ComponentType } from 'react';
 
+import { appPath } from '@/lib/paths';
+
 const pages = import.meta.glob('./Pages/**/*.tsx');
 
 /** GitHub Pages is static HTML only — use full page loads instead of Inertia XHR. */
@@ -14,7 +16,8 @@ if (import.meta.env.VITE_GITHUB_PAGES === 'true') {
       return;
     }
     event.preventDefault();
-    window.location.assign(visit.url.pathname + visit.url.search + visit.url.hash);
+    const path = visit.url.pathname + visit.url.search + visit.url.hash;
+    window.location.assign(appPath(path));
   });
 }
 
